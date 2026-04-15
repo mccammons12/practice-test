@@ -961,18 +961,6 @@
     </div>
   </div>
 
-  <!-- EMAIL GATE -->
-  <div class="email-gate" id="emailGate">
-    <div style="font-size: 40px; margin-bottom: 16px;">&#127891;</div>
-    <h2>Your results are ready!</h2>
-    <p>Enter your email to unlock your full results — including which competencies to prioritize before test day.</p>
-    <div class="email-form">
-      <input type="email" class="email-input" id="emailInput" placeholder="your@email.com">
-      <button class="btn btn-primary" onclick="submitEmail()">See My Results &#8594;</button>
-    </div>
-    <p class="email-note">Your score report and a personalized study guide for the competencies you missed will be sent to this address.</p>
-  </div>
-
   <!-- RESULTS -->
   <div class="results-wrap" id="resultsWrap">
 
@@ -1094,7 +1082,7 @@ function nextQuestion() {
     showQuestion(currentIndex);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   } else {
-    showEmailGate();
+    showResults();
   }
 }
 
@@ -1104,23 +1092,6 @@ function prevQuestion() {
     showQuestion(currentIndex);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
-}
-
-function showEmailGate() {
-  document.querySelectorAll('.q-card').forEach(function(c) { c.classList.remove('active'); });
-  document.getElementById('progressWrap').style.display = 'none';
-  document.getElementById('emailGate').classList.add('active');
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-function submitEmail() {
-  var email = document.getElementById('emailInput').value.trim();
-  if (!email || email.indexOf('@') < 0) {
-    document.getElementById('emailInput').style.borderColor = '#c0392b';
-    return;
-  }
-  document.getElementById('emailGate').classList.remove('active');
-  showResults();
 }
 
 function showResults() {
@@ -1183,6 +1154,7 @@ function showResults() {
   document.getElementById('strBreakdown').innerHTML = strHtml;
 
   document.getElementById('resultsWrap').classList.add('active');
+  document.getElementById('progressWrap').style.display = 'none';
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 </script>
