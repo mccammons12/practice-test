@@ -1,0 +1,1188 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;600&display=swap');
+
+
+
+
+.hero {
+  background: #1a2a3a;
+  color: #ffffff;
+  text-align: center;
+  padding: 56px 24px 48px;
+}
+.hero-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #a8c0e8;
+  margin-bottom: 14px;
+}
+.hero h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(28px, 5vw, 44px);
+  line-height: 1.15;
+  margin-bottom: 14px;
+  color: #ffffff;
+}
+.hero h1 em { font-style: italic; color: #a8c0e8; }
+.hero-sub {
+  font-size: 15px;
+  color: rgba(255,255,255,0.75);
+  max-width: 520px;
+  margin: 0 auto 28px;
+  line-height: 1.6;
+}
+.hero-pills {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  gap: 10px;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.hero-pill {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.85);
+}
+
+
+.progress-wrap {
+  background: #ffffff;
+  border-bottom: 1px solid #e8dfc8;
+  padding: 14px 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 14px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.progress-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #5a5a5a;
+  white-space: nowrap;
+  min-width: 80px;
+}
+.progress-bar-bg {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  height: 6px;
+  background: #e8dfc8;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.progress-bar-fill {
+  height: 100%;
+  background: #7091c9;
+  border-radius: 3px;
+  transition: width 0.4s ease;
+  width: 0%;
+}
+.progress-pct {
+  font-size: 12px;
+  font-weight: 600;
+  color: #7091c9;
+  min-width: 32px;
+  text-align: right;
+}
+
+
+.main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 20px 64px;
+}
+
+
+.section-badge {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 7px;
+  background: #e8eef8;
+  border: 1px solid #c5d4f0;
+  border-radius: 20px;
+  padding: 5px 14px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #4a6aaa;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.section-badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #7091c9;
+}
+
+
+.q-card {
+  background: #ffffff;
+  border: 1px solid #e8dfc8;
+  border-radius: 16px;
+  padding: 28px 28px 24px;
+  margin-bottom: 20px;
+  display: none;
+}
+.q-card.active { display: block; }
+.q-number {
+  font-size: 11px;
+  font-weight: 600;
+  color: #5a5a5a;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.q-competency {
+  font-size: 11px;
+  font-weight: 500;
+  color: #7091c9;
+  background: #e8eef8;
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 10px;
+  margin-bottom: 14px;
+}
+.q-text {
+  font-size: 16px;
+  font-weight: 500;
+  color: #1c1c1c;
+  line-height: 1.6;
+  margin-bottom: 22px;
+}
+.q-options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 10px;
+}
+.q-option {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1.5px solid #e8dfc8;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+  background: #ffffff;
+}
+.q-option:hover { border-color: #7091c9; background: #e8eef8; }
+.q-option.selected { border-color: #7091c9; background: #e8eef8; }
+.q-option.correct { border-color: #2d9e6b; background: #e8f7f0; }
+.q-option.incorrect { border-color: #c0392b; background: #fdf0ee; }
+.q-option.reveal-correct { border-color: #2d9e6b; background: #e8f7f0; }
+.opt-letter {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #f5ead6;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: #5a5a5a;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.q-option.selected .opt-letter { background: #7091c9; color: #ffffff; }
+.q-option.correct .opt-letter { background: #2d9e6b; color: #ffffff; }
+.q-option.incorrect .opt-letter { background: #c0392b; color: #ffffff; }
+.q-option.reveal-correct .opt-letter { background: #2d9e6b; color: #ffffff; }
+.opt-text {
+  font-size: 14px;
+  color: #1c1c1c;
+  line-height: 1.5;
+  padding-top: 2px;
+}
+
+
+.q-explanation {
+  display: none;
+  margin-top: 16px;
+  padding: 14px 16px;
+  background: #f8f9fa;
+  border-left: 3px solid #7091c9;
+  border-radius: 0 8px 8px 0;
+  font-size: 13px;
+  color: #5a5a5a;
+  line-height: 1.6;
+}
+.q-explanation.show { display: block; }
+.q-explanation strong { color: #1c1c1c; }
+
+
+.q-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 12px;
+}
+.btn {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 11px 22px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  text-decoration: none;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 6px;
+}
+.btn:active { transform: scale(0.98); }
+.btn-primary { background: #7091c9; color: #ffffff; }
+.btn-primary:hover { background: #4a6aaa; }
+.btn-outline { background: #ffffff; color: #1c1c1c; border: 1.5px solid #e8dfc8; }
+.btn-outline:hover { border-color: #7091c9; color: #7091c9; }
+.btn-disabled { background: #e8dfc8; color: #5a5a5a; cursor: not-allowed; }
+.btn-large { font-size: 16px; padding: 15px 32px; border-radius: 10px; width: 100%; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
+.btn-cta { background: #7091c9; color: #ffffff; font-size: 16px; padding: 16px 32px; border-radius: 10px; display: block; text-align: center; text-decoration: none; font-weight: 600; }
+.btn-cta:hover { background: #4a6aaa; }
+
+
+.email-gate {
+  display: none;
+  background: #ffffff;
+  border: 1px solid #e8dfc8;
+  border-radius: 16px;
+  padding: 36px 32px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.email-gate.active { display: block; }
+.email-gate h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 26px;
+  color: #1a2a3a;
+  margin-bottom: 10px;
+}
+.email-gate p {
+  font-size: 14px;
+  color: #5a5a5a;
+  margin-bottom: 24px;
+  line-height: 1.6;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.email-form { display: -webkit-box; display: -ms-flexbox; display: flex; gap: 10px; max-width: 420px; margin: 0 auto; }
+.email-input {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  padding: 12px 16px;
+  border: 1.5px solid #e8dfc8;
+  border-radius: 8px;
+  outline: none;
+  background: #fff8eb;
+  color: #1c1c1c;
+}
+.email-input:focus { border-color: #7091c9; }
+.email-note {
+  font-size: 11px;
+  color: #5a5a5a;
+  margin-top: 10px;
+  text-align: center;
+}
+@media (max-width: 480px) {
+  .email-form { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; }
+}
+
+
+.results-wrap {
+  display: none;
+}
+.results-wrap.active { display: block; }
+.results-hero {
+  background: #1a2a3a;
+  border-radius: 16px;
+  padding: 36px 28px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+.score-ring {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 5px solid rgba(255,255,255,0.15);
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  position: relative;
+}
+.score-number {
+  font-family: 'DM Serif Display', serif;
+  font-size: 36px;
+  color: #ffffff;
+  line-height: 1;
+}
+.score-denom {
+  font-size: 12px;
+  color: rgba(255,255,255,0.6);
+  margin-top: 2px;
+}
+.results-hero h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+.results-hero p {
+  font-size: 14px;
+  color: rgba(255,255,255,0.72);
+  line-height: 1.6;
+  max-width: 400px;
+  margin: 0 auto;
+}
+.score-bars {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.score-bar-item {
+  background: rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 12px 20px;
+  text-align: center;
+  min-width: 100px;
+}
+.score-bar-val {
+  font-size: 22px;
+  font-weight: 600;
+  color: #ffffff;
+}
+.score-bar-lbl {
+  font-size: 11px;
+  color: rgba(255,255,255,0.55);
+  margin-top: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+
+.breakdown-card {
+  background: #ffffff;
+  border: 1px solid #e8dfc8;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.breakdown-header {
+  background: #f5ead6;
+  padding: 16px 24px;
+  border-bottom: 1px solid #e8dfc8;
+}
+.breakdown-header h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a2a3a;
+}
+.breakdown-body { padding: 20px 24px; }
+.comp-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid #f5ead6;
+}
+.comp-row:last-child { border-bottom: none; }
+.comp-name {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  font-size: 13px;
+  color: #1c1c1c;
+  line-height: 1.4;
+}
+.comp-tag {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+.comp-tag.pass { background: #e8f7f0; color: #2d9e6b; }
+.comp-tag.miss { background: #fdf0ee; color: #c0392b; }
+.comp-tag.partial { background: #fff8eb; color: #b8860b; }
+
+
+.cta-section {
+  background: #7091c9;
+  border-radius: 16px;
+  padding: 36px 28px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.cta-section h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 26px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+.cta-section p {
+  font-size: 14px;
+  color: rgba(255,255,255,0.82);
+  margin-bottom: 24px;
+  line-height: 1.6;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cta-guarantee {
+  font-size: 12px;
+  color: rgba(255,255,255,0.6);
+  margin-top: 12px;
+}
+.cta-btn-white {
+  background: #ffffff;
+  color: #4a6aaa;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 15px 32px;
+  border-radius: 10px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.15s;
+}
+.cta-btn-white:hover { background: #fff8eb; }
+
+@media (max-width: 600px) {
+  .hero { padding: 40px 20px 36px; }
+  .q-card { padding: 20px 18px; }
+  .email-gate { padding: 28px 20px; }
+  .results-hero { padding: 28px 20px; }
+  .score-bars { -ms-flex-wrap: wrap; flex-wrap: wrap; }
+  .breakdown-body { padding: 16px; }
+  .cta-section { padding: 28px 20px; }
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <p class="hero-eyebrow">Free Practice Test</p>
+  <h1>How Ready Are You for<br><em>the TExES?</em></h1>
+  <p class="hero-sub">20 exam-aligned questions covering the EC-6 (391) and STR (293). Find out exactly where you stand before test day.</p>
+  <div class="hero-pills">
+    <span class="hero-pill">10 EC-6 (391) Questions</span>
+    <span class="hero-pill">10 STR (293) Questions</span>
+    <span class="hero-pill">Instant Score + Breakdown</span>
+  </div>
+</div>
+
+<div class="progress-wrap" id="progressWrap" style="display:none;">
+  <span class="progress-label" id="progressLabel">Question 1 of 20</span>
+  <div class="progress-bar-bg">
+    <div class="progress-bar-fill" id="progressFill"></div>
+  </div>
+  <span class="progress-pct" id="progressPct">0%</span>
+</div>
+
+<div class="main">
+
+  <!-- START SCREEN -->
+  <div id="startScreen">
+    <div style="background: #ffffff; border: 1px solid #e8dfc8; border-radius: 16px; padding: 32px 28px; text-align: center; margin-bottom: 20px;">
+      <div style="font-family: 'DM Serif Display', serif; font-size: 22px; color: #1a2a3a; margin-bottom: 10px;">Ready to find out where you stand?</div>
+      <p style="font-size: 14px; color: #5a5a5a; line-height: 1.6; max-width: 440px; margin: 0 auto 24px;">This free practice test uses real exam-style questions built from the official TExES frameworks. You'll get a score and a full competency breakdown at the end.</p>
+      <div style="display: flex; gap: 20px; justify-content: center; margin-bottom: 24px; flex-wrap: wrap;">
+        <div style="text-align: center;">
+          <div style="font-size: 24px; font-weight: 600; color: #7091c9;">20</div>
+          <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #5a5a5a;">Questions</div>
+        </div>
+        <div style="text-align: center;">
+          <div style="font-size: 24px; font-weight: 600; color: #7091c9;">~15</div>
+          <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #5a5a5a;">Minutes</div>
+        </div>
+        <div style="text-align: center;">
+          <div style="font-size: 24px; font-weight: 600; color: #7091c9;">Free</div>
+          <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #5a5a5a;">No Cost</div>
+        </div>
+      </div>
+      <button class="btn btn-primary btn-large" onclick="startTest()">Start Practice Test &#8594;</button>
+    </div>
+  </div>
+
+  <!-- EC-6 SECTION INTRO -->
+  <div class="q-card" id="intro-ec6">
+    <div class="section-badge"><span class="section-badge-dot"></span>Section 1 of 2</div>
+    <div style="font-family: 'DM Serif Display', serif; font-size: 22px; color: #1a2a3a; margin-bottom: 10px;">TExES EC-6 (391) Questions</div>
+    <p style="font-size: 14px; color: #5a5a5a; line-height: 1.6; margin-bottom: 20px;">The next 10 questions cover the Core Subjects EC-6 (391) exam across ELAR, Mathematics, Social Studies, Science, and Fine Arts/Health/PE competencies.</p>
+    <div class="q-nav">
+      <div></div>
+      <button class="btn btn-primary" onclick="nextQuestion()">Begin EC-6 Questions &#8594;</button>
+    </div>
+  </div>
+
+  <!-- EC-6 QUESTIONS 1-10 -->
+
+  <!-- Q1 -->
+  <div class="q-card" id="q1" data-answer="C" data-competency="EC-6: ELAR — Oral Language (Competency 001)" data-section="ec6">
+    <div class="q-number">Question 1 of 20 &nbsp;&#183;&nbsp; EC-6 (391)</div>
+    <div class="q-competency">ELAR — Oral Language</div>
+    <p class="q-text">A 5th-grade teacher observes that English learners in her class participate minimally during whole-class discussions even though they demonstrate comprehension during small-group work. The teacher wants to increase these students' participation in academic discourse. Which of the following instructional modifications would best address this goal?</p>
+    <div class="q-options">
+      <div class="q-option" onclick="selectAnswer(this,'q1','A')"><span class="opt-letter">A</span><span class="opt-text">Calling on English learners more frequently during whole-class instruction to give them additional practice with academic language</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q1','B')"><span class="opt-letter">B</span><span class="opt-text">Providing sentence frames and structured partner talk before transitioning to whole-group sharing</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q1','C')"><span class="opt-letter">C</span><span class="opt-text">Using a think-pair-share structure with academic sentence frames so students rehearse responses before sharing with the class</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q1','D')"><span class="opt-letter">D</span><span class="opt-text">Grouping English learners together so they can support one another's language development during discussions</span></div>
+    </div>
+    <div class="q-explanation" id="exp-q1"><strong>C is correct.</strong> Think-pair-share with sentence frames gives English learners the structured rehearsal time and linguistic scaffolds needed to participate confidently in whole-class discussion. Option B is close but less complete — it addresses preparation without the rehearsal structure that makes think-pair-share effective. Calling on students more frequently (A) increases anxiety without providing support. Homogeneous grouping (D) limits exposure to proficient English models.</div>
+    <div class="q-nav">
+      <button class="btn btn-outline" onclick="prevQuestion()">&#8592; Back</button>
+      <button class="btn btn-primary" id="next-q1" onclick="nextQuestion()" style="display:none;">Next &#8594;</button>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="q-card" id="q2" data-answer="B" data-competency="EC-6: ELAR — Reading Fluency (Competency 003)" data-section="ec6">
+    <div class="q-number">Question 2 of 20 &nbsp;&#183;&nbsp; EC-6 (391)</div>
+    <div class="q-competency">ELAR — Reading Fluency</div>
+    <p class="q-text">A 3rd-grade teacher administers an oral reading fluency probe. A student reads 68 words per minute with 94% accuracy but pauses frequently at multisyllabic words and reads with little expression. The grade-level norm is 90 words per minute. Which of the following interventions should the teacher prioritize first?</p>
+    <div class="q-options">
+      <div class="q-option" onclick="selectAnswer(this,'q2','A')"><span class="opt-letter">A</span><span class="opt-text">Systematic phonics instruction targeting multisyllabic word patterns, including syllable types and morphemic analysis</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q2','B')"><span class="opt-letter">B</span><span class="opt-text">Repeated reading of instructional-level texts with explicit modeling of prosodic reading and timed practice to build rate</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q2','C')"><span class="opt-letter">C</span><span class="opt-text">Guided reading instruction in a small group using texts at the student's frustration level to accelerate growth</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q2','D')"><span class="opt-letter">D</span><span class="opt-text">Comprehension strategy instruction using think-alouds to build meaning-making skills during reading</span></div>
+    </div>
+    <div class="q-explanation" id="exp-q2"><strong>B is correct.</strong> The student's 94% accuracy indicates decoding is largely intact; the primary deficits are rate and prosody — the hallmarks of a fluency gap. Repeated reading with prosody modeling directly addresses these. Option A is a tempting distractor because the student pauses at multisyllabic words, but at 94% accuracy the issue is fluency automaticity, not decoding. Frustration-level texts (C) would increase errors. Comprehension instruction (D) does not address the identified fluency need.</div>
+    <div class="q-nav">
+      <button class="btn btn-outline" onclick="prevQuestion()">&#8592; Back</button>
+      <button class="btn btn-primary" id="next-q2" onclick="nextQuestion()" style="display:none;">Next &#8594;</button>
+    </div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="q-card" id="q3" data-answer="D" data-competency="EC-6: Math — Number Concepts (Competency 007)" data-section="ec6">
+    <div class="q-number">Question 3 of 20 &nbsp;&#183;&nbsp; EC-6 (391)</div>
+    <div class="q-competency">Mathematics — Number Concepts</div>
+    <p class="q-text">A 2nd-grade teacher introduces subtraction with regrouping. After several lessons, most students can correctly apply the standard algorithm but cannot explain why they "borrow" from the tens place. Which of the following should the teacher do next to address this gap?</p>
+    <div class="q-options">
+      <div class="q-option" onclick="selectAnswer(this,'q3','A')"><span class="opt-letter">A</span><span class="opt-text">Provide additional practice with the standard algorithm using a wider variety of problems</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q3','B')"><span class="opt-letter">B</span><span class="opt-text">Introduce a different algorithm such as partial differences to give students an alternative procedure</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q3','C')"><span class="opt-letter">C</span><span class="opt-text">Use number lines to show subtraction as distance between two points on the number line</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q3','D')"><span class="opt-letter">D</span><span class="opt-text">Return to base-ten block representations to connect the physical regrouping action to the algorithm's symbolic notation</span></div>
+    </div>
+    <div class="q-explanation" id="exp-q3"><strong>D is correct.</strong> The students have procedural fluency but lack conceptual understanding. Returning to concrete base-ten blocks bridges the gap between the physical act of regrouping and the symbolic notation of the algorithm. Option C is a reasonable distractor but number lines show subtraction as counting back, not regrouping. Option B adds a procedure without addressing the conceptual gap. Option A reinforces the procedure students already have.</div>
+    <div class="q-nav">
+      <button class="btn btn-outline" onclick="prevQuestion()">&#8592; Back</button>
+      <button class="btn btn-primary" id="next-q3" onclick="nextQuestion()" style="display:none;">Next &#8594;</button>
+    </div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="q-card" id="q4" data-answer="A" data-competency="EC-6: Social Studies — History (Competency 015)" data-section="ec6">
+    <div class="q-number">Question 4 of 20 &nbsp;&#183;&nbsp; EC-6 (391)</div>
+    <div class="q-competency">Social Studies — History</div>
+    <p class="q-text">A 4th-grade teacher plans a unit on the Texas Revolution. To develop students' historical thinking skills, the teacher wants to help them distinguish between facts and historical interpretations. Which activity would best support this goal?</p>
+    <div class="q-options">
+      <div class="q-option" onclick="selectAnswer(this,'q4','A')"><span class="opt-letter">A</span><span class="opt-text">Presenting two accounts of the Battle of the Alamo written from different perspectives and guiding students to identify where the accounts agree, disagree, and reflect the author's point of view</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q4','B')"><span class="opt-letter">B</span><span class="opt-text">Having students construct a detailed timeline of events in the Texas Revolution using information from the textbook</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q4','C')"><span class="opt-letter">C</span><span class="opt-text">Assigning a research report in which students summarize key causes and effects of the Texas Revolution</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q4','D')"><span class="opt-letter">D</span><span class="opt-text">Showing a documentary about Texas independence and having students take notes on the main events presented</span></div>
+    </div>
+    <div class="q-explanation" id="exp-q4"><strong>A is correct.</strong> Comparing multiple perspectives directly teaches students to distinguish between documented facts and historical interpretation — a core historical thinking skill. Option B develops chronological thinking but not interpretive analysis. Option C develops synthesis but not perspective analysis. Option D is a passive activity that presents one interpretation as fact.</div>
+    <div class="q-nav">
+      <button class="btn btn-outline" onclick="prevQuestion()">&#8592; Back</button>
+      <button class="btn btn-primary" id="next-q4" onclick="nextQuestion()" style="display:none;">Next &#8594;</button>
+    </div>
+  </div>
+
+  <!-- Q5 -->
+  <div class="q-card" id="q5" data-answer="C" data-competency="EC-6: Science — Scientific Inquiry (Competency 020)" data-section="ec6">
+    <div class="q-number">Question 5 of 20 &nbsp;&#183;&nbsp; EC-6 (391)</div>
+    <div class="q-competency">Science — Scientific Inquiry</div>
+    <p class="q-text">During a 5th-grade experiment on plant growth, two groups of students obtain results that contradict each other despite following the same procedure. One group's plants grew significantly taller in sandy soil; the other group's plants grew taller in clay soil. The teacher wants to use this discrepancy as a learning opportunity. Which response best models scientific thinking?</p>
+    <div class="q-options">
+      <div class="q-option" onclick="selectAnswer(this,'q5','A')"><span class="opt-letter">A</span><span class="opt-text">Have both groups repeat the experiment simultaneously to determine which result is correct</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q5','B')"><span class="opt-letter">B</span><span class="opt-text">Tell students that conflicting results mean the experiment was flawed and model the correct procedure</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q5','C')"><span class="opt-letter">C</span><span class="opt-text">Facilitate a class discussion in which students examine each group's variables, controls, and procedures to generate hypotheses explaining the discrepancy</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q5','D')"><span class="opt-letter">D</span><span class="opt-text">Average the two groups' results and use the mean as the class conclusion</span></div>
+    </div>
+    <div class="q-explanation" id="exp-q5"><strong>C is correct.</strong> Discrepant results are a scientifically valuable opportunity to examine variables, controls, and procedures — core practices of scientific inquiry. Facilitating student-driven analysis develops scientific reasoning. Option A is reasonable but simply repeating without analysis misses the learning opportunity. Option B shuts down inquiry. Option D is scientifically invalid.</div>
+    <div class="q-nav">
+      <button class="btn btn-outline" onclick="prevQuestion()">&#8592; Back</button>
+      <button class="btn btn-primary" id="next-q5" onclick="nextQuestion()" style="display:none;">Next &#8594;</button>
+    </div>
+  </div>
+
+  <!-- Q6 -->
+  <div class="q-card" id="q6" data-answer="D" data-competency="EC-6: ELAR — Reading Comprehension (Competency 004)" data-section="ec6">
+    <div class="q-number">Question 6 of 20 &nbsp;&#183;&nbsp; EC-6 (391)</div>
+    <div class="q-competency">ELAR — Reading Comprehension</div>
+    <p class="q-text">A 4th-grade student reads a passage about the water cycle fluently and with 98% accuracy. When asked to retell the passage, the student lists several facts but cannot explain the relationships between evaporation, condensation, and precipitation. Which of the following best describes the student's primary reading need?</p>
+    <div class="q-options">
+      <div class="q-option" onclick="selectAnswer(this,'q6','A')"><span class="opt-letter">A</span><span class="opt-text">The student needs additional fluency practice to free up cognitive resources for comprehension</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q6','B')"><span class="opt-letter">B</span><span class="opt-text">The student needs vocabulary instruction to understand the technical terms in the passage</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q6','C')"><span class="opt-letter">C</span><span class="opt-text">The student needs phonics instruction to support decoding of multisyllabic science words</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q6','D')"><span class="opt-letter">D</span><span class="opt-text">The student needs instruction in identifying and using text structure to understand the causal relationships between ideas in informational text</span></div>
+    </div>
+    <div class="q-explanation" id="exp-q6"><strong>D is correct.</strong> The student reads fluently and accurately, so decoding and fluency are not the issue. The student can recall facts but cannot explain relationships — this points to a gap in understanding informational text structure, specifically cause-and-effect organization. Option B is a tempting distractor, but there is no evidence of vocabulary difficulty. The student can name the concepts; the gap is in understanding how they connect.</div>
+    <div class="q-nav">
+      <button class="btn btn-outline" onclick="prevQuestion()">&#8592; Back</button>
+      <button class="btn btn-primary" id="next-q6" onclick="nextQuestion()" style="display:none;">Next &#8594;</button>
+    </div>
+  </div>
+
+  <!-- Q7 -->
+  <div class="q-card" id="q7" data-answer="B" data-competency="EC-6: Math — Problem Solving (Competency 008)" data-section="ec6">
+    <div class="q-number">Question 7 of 20 &nbsp;&#183;&nbsp; EC-6 (391)</div>
+    <div class="q-competency">Mathematics — Problem Solving</div>
+    <p class="q-text">A teacher presents this problem to 3rd graders: "There are 24 students going on a field trip. Each van holds 8 students. How many vans are needed?" After solving it, she asks: "Can you think of another way to show this?" Two students share different representations — one draws equal groups, another writes a repeated subtraction. What does this exchange primarily demonstrate about effective mathematics instruction?</p>
+    <div class="q-options">
+      <div class="q-option" onclick="selectAnswer(this,'q7','A')"><span class="opt-letter">A</span><span class="opt-text">Students are more likely to use multiplication when they understand the relationship to repeated addition</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q7','B')"><span class="opt-letter">B</span><span class="opt-text">Encouraging multiple representations helps students develop flexible mathematical reasoning and understand the connections between operations</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q7','C')"><span class="opt-letter">C</span><span class="opt-text">Students should be guided toward the most efficient strategy rather than allowed to use varied approaches</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q7','D')"><span class="opt-letter">D</span><span class="opt-text">Problem-solving tasks are most effective when students work independently before sharing with the class</span></div>
+    </div>
+    <div class="q-explanation" id="exp-q7"><strong>B is correct.</strong> Eliciting multiple representations is a core practice of effective math instruction — it builds flexibility, reveals conceptual understanding, and surfaces the connections between operations (division, multiplication, repeated subtraction). Option A is partially true but too narrow. Option C contradicts the value of multiple strategies. Option D addresses structure, not the mathematical learning shown in the exchange.</div>
+    <div class="q-nav">
+      <button class="btn btn-outline" onclick="prevQuestion()">&#8592; Back</button>
+      <button class="btn btn-primary" id="next-q7" onclick="nextQuestion()" style="display:none;">Next &#8594;</button>
+    </div>
+  </div>
+
+  <!-- Q8 -->
+  <div class="q-card" id="q8" data-answer="A" data-competency="EC-6: Science — Life Science (Competency 021)" data-section="ec6">
+    <div class="q-number">Question 8 of 20 &nbsp;&#183;&nbsp; EC-6 (391)</div>
+    <div class="q-competency">Science — Life Science</div>
+    <p class="q-text">A 4th-grade teacher notices that students understand that owls eat mice, but when shown a food web with five organisms, they cannot predict what would happen to the hawk population if the rabbit population declined significantly. Which of the following instructional experiences would most directly develop this type of ecological reasoning?</p>
+    <div class="q-options">
+      <div class="q-option" onclick="selectAnswer(this,'q8','A')"><span class="opt-letter">A</span><span class="opt-text">Having students manipulate a physical food web model by removing organism cards and tracing which populations would be affected and in which direction</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q8','B')"><span class="opt-letter">B</span><span class="opt-text">Presenting a diagram of a food web and asking students to label producers, primary consumers, and secondary consumers</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q8','C')"><span class="opt-letter">C</span><span class="opt-text">Showing a documentary about predator-prey relationships in a specific ecosystem</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q8','D')"><span class="opt-letter">D</span><span class="opt-text">Reading a textbook section on food webs and answering comprehension questions about the content</span></div>
+    </div>
+    <div class="q-explanation" id="exp-q8"><strong>A is correct.</strong> The student's gap is in systems thinking — understanding cascading effects within a food web. Physically removing organism cards and tracing effects requires students to apply the interdependence concept dynamically, not just recall it. Option B develops vocabulary and identification skills but not predictive reasoning. Options C and D are passive and do not require the student to work through the relationships.</div>
+    <div class="q-nav">
+      <button class="btn btn-outline" onclick="prevQuestion()">&#8592; Back</button>
+      <button class="btn btn-primary" id="next-q8" onclick="nextQuestion()" style="display:none;">Next &#8594;</button>
+    </div>
+  </div>
+
+  <!-- Q9 -->
+  <div class="q-card" id="q9" data-answer="C" data-competency="EC-6: Fine Arts, Health & PE (Competency 027)" data-section="ec6">
+    <div class="q-number">Question 9 of 20 &nbsp;&#183;&nbsp; EC-6 (391)</div>
+    <div class="q-competency">Fine Arts, Health &amp; PE</div>
+    <p class="q-text">A PE teacher notices that during team sports, several students who lack athletic confidence tend to position themselves away from the action, rarely receive passes, and disengage when their team is losing. The teacher wants to restructure activities to promote skill development and inclusion for all students. Which modification would best address this?</p>
+    <div class="q-options">
+      <div class="q-option" onclick="selectAnswer(this,'q9','A')"><span class="opt-letter">A</span><span class="opt-text">Eliminating team competition entirely and replacing it with individual fitness challenges where students track personal improvement</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q9','B')"><span class="opt-letter">B</span><span class="opt-text">Assigning less confident students to positions that require less physical contact to build their confidence gradually</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q9','C')"><span class="opt-letter">C</span><span class="opt-text">Using small-sided games with structured rotation rules that ensure all students must touch the ball before a shot can be taken</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q9','D')"><span class="opt-letter">D</span><span class="opt-text">Pairing less confident students with more skilled peers who can model correct technique during game play</span></div>
+    </div>
+    <div class="q-explanation" id="exp-q9"><strong>C is correct.</strong> Structured small-sided games with mandatory participation rules change the game structure so all students are required to engage — addressing the root cause of disengagement without removing the collaborative sport context. Option A removes competition entirely, which is not necessary. Option B accommodates avoidance rather than building inclusion. Option D is well-intentioned but does not structurally ensure participation.</div>
+    <div class="q-nav">
+      <button class="btn btn-outline" onclick="prevQuestion()">&#8592; Back</button>
+      <button class="btn btn-primary" id="next-q9" onclick="nextQuestion()" style="display:none;">Next &#8594;</button>
+    </div>
+  </div>
+
+  <!-- Q10 -->
+  <div class="q-card" id="q10" data-answer="B" data-competency="EC-6: Social Studies — Economics (Competency 017)" data-section="ec6">
+    <div class="q-number">Question 10 of 20 &nbsp;&#183;&nbsp; EC-6 (391)</div>
+    <div class="q-competency">Social Studies — Economics</div>
+    <p class="q-text">A 3rd-grade teacher is planning a unit on economic concepts including wants, needs, and opportunity cost. The teacher wants students to apply these concepts to real decisions rather than just define them. Which activity would best achieve this goal?</p>
+    <div class="q-options">
+      <div class="q-option" onclick="selectAnswer(this,'q10','A')"><span class="opt-letter">A</span><span class="opt-text">Having students sort picture cards into "wants" and "needs" categories and discuss their answers with a partner</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q10','B')"><span class="opt-letter">B</span><span class="opt-text">Presenting students with a simulated budget and a list of items to purchase, requiring them to justify their choices and identify what they gave up</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q10','C')"><span class="opt-letter">C</span><span class="opt-text">Reading a picture book about a character who has to choose between two items and asking students to identify which choice the character made</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q10','D')"><span class="opt-letter">D</span><span class="opt-text">Creating a vocabulary chart with definitions and illustrations for wants, needs, goods, services, and opportunity cost</span></div>
+    </div>
+    <div class="q-explanation" id="exp-q10"><strong>B is correct.</strong> A simulated budget decision requires students to apply all three concepts — identifying wants vs. needs, making choices under scarcity, and naming the opportunity cost of their decision. Option A develops categorization but not application. Option C applies the concept to a character, not the student. Option D builds vocabulary but not application or transfer.</div>
+    <div class="q-nav">
+      <button class="btn btn-outline" onclick="prevQuestion()">&#8592; Back</button>
+      <button class="btn btn-primary" id="next-q10" onclick="nextQuestion()" style="display:none;">Next &#8594;</button>
+    </div>
+  </div>
+
+  <!-- STR SECTION INTRO -->
+  <div class="q-card" id="intro-str">
+    <div class="section-badge"><span class="section-badge-dot"></span>Section 2 of 2</div>
+    <div style="font-family: 'DM Serif Display', serif; font-size: 22px; color: #1a2a3a; margin-bottom: 10px;">TExES STR (293) Questions</div>
+    <p style="font-size: 14px; color: #5a5a5a; line-height: 1.6; margin-bottom: 20px;">The next 10 questions cover the Science of Teaching Reading (293) exam across all four domains: Reading Pedagogy, Foundational Skills, Comprehension, and Analysis and Response.</p>
+    <div class="q-nav">
+      <button class="btn btn-outline" onclick="prevQuestion()">&#8592; Back</button>
+      <button class="btn btn-primary" onclick="nextQuestion()">Begin STR Questions &#8594;</button>
+    </div>
+  </div>
+
+  <!-- STR Q11 -->
+  <div class="q-card" id="q11" data-answer="D" data-competency="STR: Domain I — Reading Pedagogy (Competency 001)" data-section="str">
+    <div class="q-number">Question 11 of 20 &nbsp;&#183;&nbsp; STR (293)</div>
+    <div class="q-competency">Domain I — Reading Pedagogy</div>
+    <p class="q-text">A kindergarten teacher is designing reading instruction for the year. Research-based reading instruction should be systematic, sequential, explicit, and strategic. Which of the following classroom practices is most consistent with all four of these characteristics?</p>
+    <div class="q-options">
+      <div class="q-option" onclick="selectAnswer(this,'q11','A')"><span class="opt-letter">A</span><span class="opt-text">Immersing students in a print-rich classroom environment and reading aloud daily to build vocabulary and a love of reading</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q11','B')"><span class="opt-letter">B</span><span class="opt-text">Teaching letter-sound correspondences when students demonstrate readiness and interest, progressing from simple to complex patterns</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q11','C')"><span class="opt-letter">C</span><span class="opt-text">Using leveled readers matched to student reading level and providing guided questions to support comprehension</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q11','D')"><span class="opt-letter">D</span><span class="opt-text">Following a planned scope and sequence for phonics instruction, directly teaching each pattern with modeling and guided practice, and applying assessment data to adjust pacing</span></div>
+    </div>
+    <div class="q-explanation" id="exp-q11"><strong>D is correct.</strong> Option D demonstrates all four characteristics: a planned scope and sequence (systematic), progressing through patterns in order (sequential), direct teaching with modeling (explicit), and using assessment data to adjust (strategic). Option B is close but teaching "when students demonstrate readiness and interest" makes it child-led rather than systematic. Options A and C are valuable practices but do not represent systematic, explicit phonics instruction.</div>
+    <div class="q-nav">
+      <button class="btn btn-outline" onclick="prevQuestion()">&#8592; Back</button>
+      <button class="btn btn-primary" id="next-q11" onclick="nextQuestion()" style="display:none;">Next &#8594;</button>
+    </div>
+  </div>
+
+  <!-- STR Q12 -->
+  <div class="q-card" id="q12" data-answer="C" data-competency="STR: Domain II — Foundational Skills (Competency 003)" data-section="str">
+    <div class="q-number">Question 12 of 20 &nbsp;&#183;&nbsp; STR (293)</div>
+    <div class="q-competency">Domain II — Foundational Skills: Phonological vs. Phonemic Awareness</div>
+    <p class="q-text">A teacher asks a kindergartener to say the word "cat" and then say it again without the /k/ sound. The student responds "at." This task is best described as an assessment of which skill?</p>
+    <div class="q-options">
+      <div class="q-option" onclick="selectAnswer(this,'q12','A')"><span class="opt-letter">A</span><span class="opt-text">Phonological awareness, because it involves manipulating sounds in spoken language</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q12','B')"><span class="opt-letter">B</span><span class="opt-text">Phonics, because the student must know which letter represents the /k/ sound in order to remove it</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q12','C')"><span class="opt-letter">C</span><span class="opt-text">Phonemic awareness, because it requires the student to isolate and delete a specific phoneme within a spoken word</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q12','D')"><span class="opt-letter">D</span><span class="opt-text">Phonological awareness, because syllable deletion and phoneme deletion are both subcategories of the same skill</span></div>
+    </div>
+    <div class="q-explanation" id="exp-q12"><strong>C is correct.</strong> Phoneme deletion — removing a specific sound from a spoken word — is a phonemic awareness task because it works at the level of individual phonemes. Option A is a common distractor because phonemic awareness is a subset of phonological awareness, but on the TExES the distinction matters: phonological awareness is the broad category; phonemic awareness refers specifically to individual phoneme manipulation. Option B is incorrect because the task is entirely oral — no print is involved. Option D incorrectly equates phoneme deletion with syllable deletion.</div>
+    <div class="q-nav">
+      <button class="btn btn-outline" onclick="prevQuestion()">&#8592; Back</button>
+      <button class="btn btn-primary" id="next-q12" onclick="nextQuestion()" style="display:none;">Next &#8594;</button>
+    </div>
+  </div>
+
+  <!-- STR Q13 -->
+  <div class="q-card" id="q13" data-answer="A" data-competency="STR: Domain II — Foundational Skills (Competency 004)" data-section="str">
+    <div class="q-number">Question 13 of 20 &nbsp;&#183;&nbsp; STR (293)</div>
+    <div class="q-competency">Domain II — Foundational Skills: Phonics</div>
+    <p class="q-text">A 1st-grade teacher wants to assess whether students have mastered the short vowel CVC pattern before introducing CVCe words. Which assessment would provide the most valid data for this specific purpose?</p>
+    <div class="q-options">
+      <div class="q-option" onclick="selectAnswer(this,'q13','A')"><span class="opt-letter">A</span><span class="opt-text">A pseudoword decoding task using nonsense CVC words such as "fep," "bim," and "vot"</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q13','B')"><span class="opt-letter">B</span><span class="opt-text">An oral reading fluency probe using a passage with a mix of CVC and CVCe words</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q13','C')"><span class="opt-letter">C</span><span class="opt-text">A word recognition assessment using high-frequency CVC words such as "cat," "dog," and "big"</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q13','D')"><span class="opt-letter">D</span><span class="opt-text">A spelling assessment asking students to write five CVC words from dictation</span></div>
+    </div>
+    <div class="q-explanation" id="exp-q13"><strong>A is correct.</strong> Pseudoword decoding isolates the phonics pattern being assessed — students cannot rely on memorized whole words, so correct reading of "fep" demonstrates genuine application of the short vowel CVC pattern. Option C uses real words that students may have memorized as sight words, which would not confirm pattern knowledge. Option B includes CVCe words, contaminating the assessment. Option D assesses encoding (spelling), which is related but not the same as decoding.</div>
+    <div class="q-nav">
+      <button class="btn btn-outline" onclick="prevQuestion()">&#8592; Back</button>
+      <button class="btn btn-primary" id="next-q13" onclick="nextQuestion()" style="display:none;">Next &#8594;</button>
+    </div>
+  </div>
+
+  <!-- STR Q14 -->
+  <div class="q-card" id="q14" data-answer="B" data-competency="STR: Domain II — Foundational Skills (Competency 005)" data-section="str">
+    <div class="q-number">Question 14 of 20 &nbsp;&#183;&nbsp; STR (293)</div>
+    <div class="q-competency">Domain II — Foundational Skills: Vocabulary</div>
+    <p class="q-text">A 3rd-grade teacher is preparing students to read a science text about ecosystems that contains several Tier 2 words, including "thrives," "diverse," and "sustain." Which approach to pre-teaching these words would best support students' reading comprehension of the text?</p>
+    <div class="q-options">
+      <div class="q-option" onclick="selectAnswer(this,'q14','A')"><span class="opt-letter">A</span><span class="opt-text">Providing dictionary definitions for each word and asking students to use each in an original sentence before reading</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q14','B')"><span class="opt-letter">B</span><span class="opt-text">Introducing each word in the context of the text, using student-friendly explanations, related examples, and brief discussion of how each word functions within the passage</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q14','C')"><span class="opt-letter">C</span><span class="opt-text">Having students complete a vocabulary worksheet matching each word to its definition prior to reading</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q14','D')"><span class="opt-letter">D</span><span class="opt-text">Telling students to use context clues within the text to figure out the meaning of unfamiliar words as they encounter them</span></div>
+    </div>
+    <div class="q-explanation" id="exp-q14"><strong>B is correct.</strong> Introducing words in text context with student-friendly explanations builds the rich, usable word knowledge that supports comprehension. Option A (dictionary definitions + sentences) produces shallow knowledge — students can write a sentence without understanding how the word works in academic text. Option C (matching worksheet) is similarly shallow. Option D (context clues only) is insufficient for Tier 2 words that may not be clearly defined by surrounding text.</div>
+    <div class="q-nav">
+      <button class="btn btn-outline" onclick="prevQuestion()">&#8592; Back</button>
+      <button class="btn btn-primary" id="next-q14" onclick="nextQuestion()" style="display:none;">Next &#8594;</button>
+    </div>
+  </div>
+
+  <!-- STR Q15 -->
+  <div class="q-card" id="q15" data-answer="D" data-competency="STR: Domain III — Comprehension (Competency 007)" data-section="str">
+    <div class="q-number">Question 15 of 20 &nbsp;&#183;&nbsp; STR (293)</div>
+    <div class="q-competency">Domain III — Reading Comprehension</div>
+    <p class="q-text">After reading a passage, a 4th-grade student can answer questions about what happened in the text but cannot explain why a character made a particular choice or predict what the character might do next. The student's decoding and fluency are at grade level. Which of the following represents the most appropriate instructional response?</p>
+    <div class="q-options">
+      <div class="q-option" onclick="selectAnswer(this,'q15','A')"><span class="opt-letter">A</span><span class="opt-text">Provide more complex texts to challenge the student and develop deeper engagement with reading</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q15','B')"><span class="opt-letter">B</span><span class="opt-text">Increase vocabulary instruction to ensure the student has the word knowledge needed to make inferences</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q15','C')"><span class="opt-letter">C</span><span class="opt-text">Use repeated reading of the same passage to build familiarity with the text and support deeper understanding</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q15','D')"><span class="opt-letter">D</span><span class="opt-text">Model inferential thinking using think-alouds that demonstrate how to combine text evidence with background knowledge, then provide guided practice with similar questions</span></div>
+    </div>
+    <div class="q-explanation" id="exp-q15"><strong>D is correct.</strong> The student can recall literal information but cannot make inferences — a gap in higher-order comprehension strategy. Think-alouds make the inferential process explicit and teachable, and guided practice allows the student to apply it. Option B is a common distractor — vocabulary can affect inference, but there is no evidence of vocabulary gaps in this scenario. Option A increases complexity without addressing the strategy gap. Option C builds familiarity but does not teach inference.</div>
+    <div class="q-nav">
+      <button class="btn btn-outline" onclick="prevQuestion()">&#8592; Back</button>
+      <button class="btn btn-primary" id="next-q15" onclick="nextQuestion()" style="display:none;">Next &#8594;</button>
+    </div>
+  </div>
+
+  <!-- STR Q16 -->
+  <div class="q-card" id="q16" data-answer="C" data-competency="STR: Domain I — Reading Pedagogy (Competency 002)" data-section="str">
+    <div class="q-number">Question 16 of 20 &nbsp;&#183;&nbsp; STR (293)</div>
+    <div class="q-competency">Domain I — Reading Pedagogy: Assessment</div>
+    <p class="q-text">A 2nd-grade teacher uses a universal screening measure at the beginning of the year and identifies three students who scored below the benchmark for oral reading fluency. The teacher wants to determine whether these students' low fluency is primarily related to decoding difficulties or to other factors. Which assessment would provide the most useful diagnostic information for this purpose?</p>
+    <div class="q-options">
+      <div class="q-option" onclick="selectAnswer(this,'q16','A')"><span class="opt-letter">A</span><span class="opt-text">Administer another oral reading fluency probe using a different passage to confirm the initial results</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q16','B')"><span class="opt-letter">B</span><span class="opt-text">Conduct a vocabulary assessment to determine whether students have sufficient word knowledge to support fluent reading</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q16','C')"><span class="opt-letter">C</span><span class="opt-text">Administer a phonics survey or word pattern assessment and a listening comprehension task to determine whether the difficulty is code-based or language-based</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q16','D')"><span class="opt-letter">D</span><span class="opt-text">Observe the students during independent reading to assess their reading behaviors and engagement</span></div>
+    </div>
+    <div class="q-explanation" id="exp-q16"><strong>C is correct.</strong> To distinguish between code-based and language-based reading difficulties, the teacher needs two pieces of data: a phonics assessment (to determine if decoding is the issue) and a listening comprehension task (to determine if language comprehension is intact). If phonics is weak and listening comprehension is strong, the problem is code-based. If listening comprehension is also weak, the issue extends to language. Option A just confirms the existing finding. Option B assesses one potential factor but not the full diagnostic picture. Option D is observational and informal, not diagnostic.</div>
+    <div class="q-nav">
+      <button class="btn btn-outline" onclick="prevQuestion()">&#8592; Back</button>
+      <button class="btn btn-primary" id="next-q16" onclick="nextQuestion()" style="display:none;">Next &#8594;</button>
+    </div>
+  </div>
+
+  <!-- STR Q17 -->
+  <div class="q-card" id="q17" data-answer="A" data-competency="STR: Domain II — Foundational Skills (Competency 003)" data-section="str">
+    <div class="q-number">Question 17 of 20 &nbsp;&#183;&nbsp; STR (293)</div>
+    <div class="q-competency">Domain II — Foundational Skills: Phonemic Awareness Progression</div>
+    <p class="q-text">A kindergarten teacher is planning a phonological awareness lesson sequence. Based on the developmental progression of phonological skills, which order of instruction is most appropriate?</p>
+    <div class="q-options">
+      <div class="q-option" onclick="selectAnswer(this,'q17','A')"><span class="opt-letter">A</span><span class="opt-text">Rhyme recognition → syllable segmentation → onset-rime blending → phoneme isolation → phoneme segmentation → phoneme manipulation</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q17','B')"><span class="opt-letter">B</span><span class="opt-text">Phoneme segmentation → phoneme isolation → syllable segmentation → rhyme recognition → phoneme manipulation → onset-rime blending</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q17','C')"><span class="opt-letter">C</span><span class="opt-text">Phoneme manipulation → rhyme recognition → onset-rime blending → syllable segmentation → phoneme isolation → phoneme segmentation</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q17','D')"><span class="opt-letter">D</span><span class="opt-text">Syllable segmentation → phoneme segmentation → rhyme recognition → phoneme isolation → onset-rime blending → phoneme manipulation</span></div>
+    </div>
+    <div class="q-explanation" id="exp-q17"><strong>A is correct.</strong> Phonological awareness develops along a continuum from larger to smaller units of sound. Students typically develop awareness of larger units first (rhymes, syllables), then move to onset-rime, then individual phonemes (isolation, segmentation), with phoneme manipulation being the most advanced. This progression reflects cognitive development and is supported by research on the sequence of phonological skill acquisition.</div>
+    <div class="q-nav">
+      <button class="btn btn-outline" onclick="prevQuestion()">&#8592; Back</button>
+      <button class="btn btn-primary" id="next-q17" onclick="nextQuestion()" style="display:none;">Next &#8594;</button>
+    </div>
+  </div>
+
+  <!-- STR Q18 -->
+  <div class="q-card" id="q18" data-answer="B" data-competency="STR: Domain I — Reading Pedagogy: Dyslexia and MTSS (Competency 001)" data-section="str">
+    <div class="q-number">Question 18 of 20 &nbsp;&#183;&nbsp; STR (293)</div>
+    <div class="q-competency">Domain I — Reading Pedagogy: Dyslexia and MTSS</div>
+    <p class="q-text">A 2nd-grade student has received Tier 2 intervention for six weeks targeting phonemic awareness and phonics. Progress monitoring data shows minimal growth across three consecutive data points. The student continues to struggle significantly with decoding and blending even simple CVC words. According to a multi-tiered systems of support (MTSS) framework, which of the following is the most appropriate next step?</p>
+    <div class="q-options">
+      <div class="q-option" onclick="selectAnswer(this,'q18','A')"><span class="opt-letter">A</span><span class="opt-text">Continue the current Tier 2 intervention for an additional six weeks to allow more time for the student to respond</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q18','B')"><span class="opt-letter">B</span><span class="opt-text">Intensify support to Tier 3 with more frequent and individualized intervention, and initiate the process of referring the student for a comprehensive evaluation</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q18','C')"><span class="opt-letter">C</span><span class="opt-text">Move the student back to Tier 1 instruction since the Tier 2 intervention has not been effective</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q18','D')"><span class="opt-letter">D</span><span class="opt-text">Change the Tier 2 intervention program to a different approach and collect data for another six weeks before making further decisions</span></div>
+    </div>
+    <div class="q-explanation" id="exp-q18"><strong>B is correct.</strong> In an MTSS framework, when a student shows minimal response to Tier 2 intervention across multiple data points, the protocol calls for intensifying support (moving to Tier 3) and initiating a referral for comprehensive evaluation — which may identify a learning disability such as dyslexia. Option A delays necessary action. Option C is a regression, not a progression. Option D may be appropriate at some point, but after three flat data points the priority is intensification and referral, not simply switching programs.</div>
+    <div class="q-nav">
+      <button class="btn btn-outline" onclick="prevQuestion()">&#8592; Back</button>
+      <button class="btn btn-primary" id="next-q18" onclick="nextQuestion()" style="display:none;">Next &#8594;</button>
+    </div>
+  </div>
+
+  <!-- STR Q19 -->
+  <div class="q-card" id="q19" data-answer="C" data-competency="STR: Domain IV — Analysis and Response (Competency 008)" data-section="str">
+    <div class="q-number">Question 19 of 20 &nbsp;&#183;&nbsp; STR (293)</div>
+    <div class="q-competency">Domain IV — Analysis and Response</div>
+    <p class="q-text">A teacher reviews the following data for a 3rd-grade student: oral reading fluency — 62 words per minute (below benchmark of 90); phonics survey — 78% accuracy on grade-level patterns; listening comprehension — above grade level; vocabulary — above grade level. Based on this data pattern, which of the following conclusions is most supported and what instructional response is most appropriate?</p>
+    <div class="q-options">
+      <div class="q-option" onclick="selectAnswer(this,'q19','A')"><span class="opt-letter">A</span><span class="opt-text">The student has a language comprehension deficit; instruction should focus on building background knowledge and academic vocabulary</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q19','B')"><span class="opt-letter">B</span><span class="opt-text">The student's low fluency reflects low motivation; the teacher should increase engagement through more interesting texts and choice reading</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q19','C')"><span class="opt-letter">C</span><span class="opt-text">The student has a code-based reading difficulty; instruction should target the specific phonics patterns where accuracy is weak and use repeated reading to build fluency</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q19','D')"><span class="opt-letter">D</span><span class="opt-text">The student's above-average vocabulary and listening comprehension suggest no intervention is needed at this time</span></div>
+    </div>
+    <div class="q-explanation" id="exp-q19"><strong>C is correct.</strong> The Simple View of Reading states that reading comprehension = decoding x language comprehension. This student has strong language comprehension but weak decoding and fluency — a classic code-based profile. The 78% phonics accuracy indicates specific pattern gaps that, combined with below-benchmark fluency, require targeted phonics and fluency instruction. Option A is the opposite of what the data shows — language comprehension is a strength. Option B introduces an unsupported motivational explanation. Option D ignores the significant fluency deficit despite the student's language strengths.</div>
+    <div class="q-nav">
+      <button class="btn btn-outline" onclick="prevQuestion()">&#8592; Back</button>
+      <button class="btn btn-primary" id="next-q19" onclick="nextQuestion()" style="display:none;">Next &#8594;</button>
+    </div>
+  </div>
+
+  <!-- STR Q20 -->
+  <div class="q-card" id="q20" data-answer="B" data-competency="STR: Domain III — Comprehension (Competency 006)" data-section="str">
+    <div class="q-number">Question 20 of 20 &nbsp;&#183;&nbsp; STR (293)</div>
+    <div class="q-competency">Domain III — Comprehension: Informational Text Structure</div>
+    <p class="q-text">A 4th-grade teacher is reading assessment data and notices that students can retell narrative texts accurately but struggle to summarize informational texts, often listing unrelated details rather than capturing the main idea and supporting details. Which of the following instructional approaches would most directly address this specific gap?</p>
+    <div class="q-options">
+      <div class="q-option" onclick="selectAnswer(this,'q20','A')"><span class="opt-letter">A</span><span class="opt-text">Increase the amount of independent reading time students spend with informational texts to build familiarity with the genre</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q20','B')"><span class="opt-letter">B</span><span class="opt-text">Explicitly teach signal words and structures common in informational text (e.g., description, sequence, compare/contrast, cause/effect, problem/solution) and model how to use them to identify main ideas during reading</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q20','C')"><span class="opt-letter">C</span><span class="opt-text">Have students practice summarizing narrative texts before transitioning to informational texts so they develop a strong foundation in the skill</span></div>
+      <div class="q-option" onclick="selectAnswer(this,'q20','D')"><span class="opt-letter">D</span><span class="opt-text">Provide graphic organizers for students to complete while reading informational texts to help them organize their notes before writing a summary</span></div>
+    </div>
+    <div class="q-explanation" id="exp-q20"><strong>B is correct.</strong> Students who can summarize narratives but not informational texts typically lack knowledge of informational text structures and the signal words that indicate them. Explicit instruction in these structures and how to use them to identify main ideas directly addresses the identified gap. Option D is a strong distractor — graphic organizers support organization, but without explicit instruction in text structure, students may not know what to put in them. Option A builds exposure but not skill. Option C delays necessary instruction and misidentifies narrative summarizing as the prerequisite.</div>
+    <div class="q-nav">
+      <button class="btn btn-outline" onclick="prevQuestion()">&#8592; Back</button>
+      <button class="btn btn-primary" id="next-q20" onclick="nextQuestion()" style="display:none;">See My Results &#8594;</button>
+    </div>
+  </div>
+
+  <!-- EMAIL GATE -->
+  <div class="email-gate" id="emailGate">
+    <div style="font-size: 40px; margin-bottom: 16px;">&#127891;</div>
+    <h2>Your results are ready!</h2>
+    <p>Enter your email to see your score, which competencies you missed, and a personalized study plan.</p>
+    <div class="email-form">
+      <input type="email" class="email-input" id="emailInput" placeholder="your@email.com">
+      <button class="btn btn-primary" onclick="submitEmail()">See My Results &#8594;</button>
+    </div>
+    <p class="email-note">No spam. We'll send your results and study tips. Unsubscribe anytime.</p>
+  </div>
+
+  <!-- RESULTS -->
+  <div class="results-wrap" id="resultsWrap">
+
+    <div class="results-hero">
+      <div class="score-ring">
+        <div class="score-number" id="scoreNumber">0</div>
+        <div class="score-denom">out of 20</div>
+      </div>
+      <h2 id="resultsHeading">Your Results</h2>
+      <p id="resultsMessage">Here's how you did.</p>
+      <div class="score-bars">
+        <div class="score-bar-item">
+          <div class="score-bar-val" id="ec6Score">0/10</div>
+          <div class="score-bar-lbl">EC-6 (391)</div>
+        </div>
+        <div class="score-bar-item">
+          <div class="score-bar-val" id="strScore">0/10</div>
+          <div class="score-bar-lbl">STR (293)</div>
+        </div>
+        <div class="score-bar-item">
+          <div class="score-bar-val" id="scorePct">0%</div>
+          <div class="score-bar-lbl">Score</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="breakdown-card">
+      <div class="breakdown-header">
+        <h3>EC-6 (391) — Competency Breakdown</h3>
+      </div>
+      <div class="breakdown-body" id="ec6Breakdown"></div>
+    </div>
+
+    <div class="breakdown-card">
+      <div class="breakdown-header">
+        <h3>STR (293) — Competency Breakdown</h3>
+      </div>
+      <div class="breakdown-body" id="strBreakdown"></div>
+    </div>
+
+    <div class="cta-section">
+      <h2>Ready to close the gaps?</h2>
+      <p id="ctaMessage">Your results show exactly which areas to focus on. Legacy Teacher Prep has structured lessons, 300+ practice questions, and a full study plan built around these competencies.</p>
+      <a href="https://www.legacyteacherprep.com/texesec6391bundle" class="cta-btn-white">Start My Study Plan &#8594;</a>
+      <p class="cta-guarantee">&#128737; Pass Protection Guarantee for EC-6 (391) &nbsp;&#183;&nbsp; $49/mo, cancel anytime</p>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+var questions = ['intro-ec6','q1','q2','q3','q4','q5','q6','q7','q8','q9','q10','intro-str','q11','q12','q13','q14','q15','q16','q17','q18','q19','q20'];
+var currentIndex = 0;
+var answers = {};
+var testStarted = false;
+
+function startTest() {
+  document.getElementById('startScreen').style.display = 'none';
+  document.getElementById('progressWrap').style.display = 'flex';
+  testStarted = true;
+  showQuestion(0);
+}
+
+function showQuestion(index) {
+  document.querySelectorAll('.q-card').forEach(function(c) { c.classList.remove('active'); });
+  var id = questions[index];
+  var el = document.getElementById(id);
+  if (el) { el.classList.add('active'); }
+  updateProgress(index);
+}
+
+function updateProgress(index) {
+  var answered = Object.keys(answers).length;
+  var pct = Math.round((answered / 20) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressPct').textContent = pct + '%';
+  var qNum = index + 1;
+  if (questions[index] && questions[index].startsWith('intro')) {
+    document.getElementById('progressLabel').textContent = 'Section Break';
+  } else if (questions[index] && questions[index].startsWith('q')) {
+    var num = parseInt(questions[index].replace('q',''));
+    document.getElementById('progressLabel').textContent = 'Question ' + num + ' of 20';
+  }
+}
+
+function selectAnswer(el, qId, choice) {
+  var card = document.getElementById(qId);
+  var correct = card.getAttribute('data-answer');
+  var opts = card.querySelectorAll('.q-option');
+
+  if (answers[qId]) return;
+  answers[qId] = choice;
+
+  opts.forEach(function(o) {
+    var letter = o.querySelector('.opt-letter').textContent.trim();
+    if (letter === correct) { o.classList.add('reveal-correct'); }
+  });
+
+  if (choice === correct) {
+    el.classList.remove('reveal-correct');
+    el.classList.add('correct');
+  } else {
+    el.classList.add('incorrect');
+  }
+
+  var exp = document.getElementById('exp-' + qId);
+  if (exp) { exp.classList.add('show'); }
+
+  var nextBtn = document.getElementById('next-' + qId);
+  if (nextBtn) { nextBtn.style.display = 'inline-flex'; }
+
+  updateProgress(currentIndex);
+}
+
+function nextQuestion() {
+  if (currentIndex < questions.length - 1) {
+    currentIndex++;
+    showQuestion(currentIndex);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } else {
+    showEmailGate();
+  }
+}
+
+function prevQuestion() {
+  if (currentIndex > 0) {
+    currentIndex--;
+    showQuestion(currentIndex);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+}
+
+function showEmailGate() {
+  document.querySelectorAll('.q-card').forEach(function(c) { c.classList.remove('active'); });
+  document.getElementById('progressWrap').style.display = 'none';
+  document.getElementById('emailGate').classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function submitEmail() {
+  var email = document.getElementById('emailInput').value.trim();
+  if (!email || email.indexOf('@') < 0) {
+    document.getElementById('emailInput').style.borderColor = '#c0392b';
+    return;
+  }
+  document.getElementById('emailGate').classList.remove('active');
+  showResults();
+}
+
+function showResults() {
+  var ec6Qs = ['q1','q2','q3','q4','q5','q6','q7','q8','q9','q10'];
+  var strQs = ['q11','q12','q13','q14','q15','q16','q17','q18','q19','q20'];
+
+  var ec6Correct = 0; var strCorrect = 0;
+  ec6Qs.forEach(function(q) {
+    var card = document.getElementById(q);
+    if (answers[q] === card.getAttribute('data-answer')) ec6Correct++;
+  });
+  strQs.forEach(function(q) {
+    var card = document.getElementById(q);
+    if (answers[q] === card.getAttribute('data-answer')) strCorrect++;
+  });
+
+  var total = ec6Correct + strCorrect;
+  var pct = Math.round((total / 20) * 100);
+
+  document.getElementById('scoreNumber').textContent = total;
+  document.getElementById('ec6Score').textContent = ec6Correct + '/10';
+  document.getElementById('strScore').textContent = strCorrect + '/10';
+  document.getElementById('scorePct').textContent = pct + '%';
+
+  var heading, message, ctaMsg;
+  if (pct >= 80) {
+    heading = 'Great start — now go further.';
+    message = 'You scored ' + pct + '%. Strong performance, but the real exam has 210 EC-6 questions and 90 STR questions. A few gaps here could mean many more on test day.';
+    ctaMsg = 'You have a solid foundation. Legacy Teacher Prep will sharpen the specific competencies where you had misses and ensure you\'re fully prepared across every domain.';
+  } else if (pct >= 60) {
+    heading = 'You have gaps to close before test day.';
+    message = 'You scored ' + pct + '%. This is a common starting point — and exactly why structured prep matters. The competencies you missed here are high-frequency on the real exam.';
+    ctaMsg = 'Your results show clear areas to focus on. Legacy Teacher Prep\'s structured lessons are built around these exact competencies — so you study what matters, not everything.';
+  } else {
+    heading = 'This is your wake-up call.';
+    message = 'You scored ' + pct + '%. The real exam is significantly harder. Starting structured prep now gives you the best chance of passing the first time.';
+    ctaMsg = 'Don\'t leave this to chance. Legacy Teacher Prep gives you a clear study path from where you are right now to passing both the EC-6 (391) and STR (293) with confidence.';
+  }
+
+  document.getElementById('resultsHeading').textContent = heading;
+  document.getElementById('resultsMessage').textContent = message;
+  document.getElementById('ctaMessage').textContent = ctaMsg;
+
+  var ec6Html = '';
+  ec6Qs.forEach(function(q) {
+    var card = document.getElementById(q);
+    var comp = card.getAttribute('data-competency');
+    var passed = answers[q] === card.getAttribute('data-answer');
+    ec6Html += '<div class="comp-row"><span class="comp-name">' + comp.replace('EC-6: ','') + '</span><span class="comp-tag ' + (passed ? 'pass' : 'miss') + '">' + (passed ? '&#10003; Correct' : '&#10007; Review') + '</span></div>';
+  });
+  document.getElementById('ec6Breakdown').innerHTML = ec6Html;
+
+  var strHtml = '';
+  strQs.forEach(function(q) {
+    var card = document.getElementById(q);
+    var comp = card.getAttribute('data-competency');
+    var passed = answers[q] === card.getAttribute('data-answer');
+    strHtml += '<div class="comp-row"><span class="comp-name">' + comp.replace('STR: ','') + '</span><span class="comp-tag ' + (passed ? 'pass' : 'miss') + '">' + (passed ? '&#10003; Correct' : '&#10007; Review') + '</span></div>';
+  });
+  document.getElementById('strBreakdown').innerHTML = strHtml;
+
+  document.getElementById('resultsWrap').classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
