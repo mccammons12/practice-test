@@ -423,7 +423,25 @@ body {
 }
 .cta-section h2 { font-family: 'DM Serif Display', serif; font-size: 26px; color: #fff; margin-bottom: 10px; }
 .cta-section p { font-size: 14px; color: rgba(255,255,255,0.82); margin-bottom: 24px; line-height: 1.6; max-width: 420px; margin-left: auto; margin-right: auto; }
-.cta-guarantee { font-size: 12px; color: rgba(255,255,255,0.55); margin-top: 12px; }
+.cta-guarantee {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.9);
+  margin-top: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.cta-guarantee::before {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 18px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+  flex-shrink: 0;
+}
 .cta-btn-white {
   background: #fff;
   color: var(--blue-dark);
@@ -971,7 +989,7 @@ body {
       <h2>Ready to close the gaps?</h2>
       <p id="ctaMessage">Your results show exactly which areas to focus on. Legacy Teacher Prep has structured lessons, 300+ practice questions, and a full study plan built around these competencies.</p>
       <a href="https://www.legacyteacherprep.com/texesec6391bundle" class="cta-btn-white">Start My Study Plan →</a>
-      <p class="cta-guarantee">🛡 Pass Protection Guarantee for EC-6 (391) &nbsp;·&nbsp; $49/mo, cancel anytime</p>
+      <p class="cta-guarantee">Pass Protection Guarantee Available</p>
     </div>
   </div>
 
